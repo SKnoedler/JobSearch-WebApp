@@ -1,0 +1,9 @@
+/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+  
+  /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+  table.table.table-responsive tr td { font-size: 13px; }
+  button.btn.btn-link.text-left { font-size: 13px;  padding: 0}
+  }
+
+  

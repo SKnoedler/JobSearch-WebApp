@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>#Non-Consultants</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../../static/pictures/favicon-16x16.png">
+
+    <link rel="stylesheet" type="text/css" href="../../static/css/main.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> <!-- bootstrap import for css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">  <!-- font-awesome import -->
+
+</head>
+
+<body>
+    <div class="text-white">
+        <div class="container">
+            <hr class="my-1">
+            <!-- all divs are divided into 12 column, col-md-10 means that it spans 10 of 12 columns -->
+            <!-- applies to this size and larger: xs = extra small screens (mobile phones)sm = small screens (tablets)md = medium screens (some desktops)lg = large screens (remaining desktops)-->
+            <!-- Move columns to the right using .offset-md-* classes. These classes increase the left margin of a column by * columns.-->
+            <!-- xs(default) > overridden by sm > overridden by md > overridden by lg -->
+            <div class="col-md-10 mt-5 text-left"> <!-- mt-* describes spacing (margin/padding): 0-5 or auto -->
+                <h1 class="display-5">Search Results</h1>
+                <hr class="my-2">
+                <table class="table table-responsive">
+                    <thead class="border-bottom text-white font-weight-bold">
+                        <tr>
+                            <td>Company Name</td>
+                            <td>Position Name</td>
+                        </tr>
+                    </thead>
+                    <tbody class="border-bottom text-white text-left">
+                        {% for i in jobs_found_list %}
+                            <tr>
+                                <td>{{i.JobTitle}}</td>
+                                <td><form action="" method="GET"><button class="btn btn-link text-left" role="link" type="submit" value={{i.CompanyName1}} name="data">{% csrf_token %}{{i.CompanyName}}</button></form></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+                <form action= "" method="get">
+                    <div class="row">
+                        <div class="col-md-12 mt-2">
+                            <div class="float-right">
+                            <button class="btn btn-success btn-block btn-secondary float-right" name = 'button_home'><i class="fas fa-home"></i>
+                                 Home</button>   
+                            </div>
+                        </div>
+                    </div> 
+                    </form>
+            </div>
+
+            
+
+        </div>
+
+
+        
+    
+
+
+     <!-- bootstrap import for javascript-->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+    </div>
+
+    </body>
+
+</html>
+
+<style type="text/css">
+    body { background: rgb(33, 33, 34) !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+ </style>

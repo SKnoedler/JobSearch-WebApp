@@ -1,0 +1,29 @@
+<!-- <link rel="stylesheet" type="static/css" href="form.css">-->
+{% extends "jobsearch_app/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<form action= "" method="post" autocomplete="off">
+{% csrf_token %} 
+
+    <div class="col-md-12">
+        {{form.search_term|as_crispy_field}}
+    </div>
+    
+    <div class="col-md-12">
+        {{form.location|as_crispy_field}}
+    </div>
+    <br>
+    <div class="col-md-12">
+          <div class="float-right">
+          <button type="submit" class="btn btn-success btn-block btn-md btn-secondary float-right" name="submittingsearch"><i class="fas fa-search"></i>
+               Search</button>   
+          </div>
+    </div>
+
+
+</form>
+
+{% endblock content %}
